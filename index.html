@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suitmedia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Pengaturan proxy
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const apiUrl = 'https://suitmedia-backend.suitdev.com/api/ideas';
+    
+            // Parameter API
+            const params = {
+                'page[number]': 1,
+                'page[size]': 10,
+                'append[]': ['small_image', 'medium_image'],
+                'sort': 'published_at' // Atau '-published_at' untuk descending
+            };
+    
+            // Menggunakan jQuery untuk mengambil data dari API
+            $.ajax({
+                url: proxyUrl + apiUrl,
+                type: 'GET',
+                data: params,
+                success: function(data) {
+                    // Tanggapan berhasil, Anda dapat memanipulasi data di sini
+                    console.log(data);
+                },
+                error: function(error) {
+                    // Tanggapan gagal, handle kesalahan di sini
+                    console.error('Error fetching data:', error);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <a href="#default" class="logo"><img src="assets/img/logo1.png" alt=""></a>
+    <div class="header-right">
+        <a class="active" href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#careers">Careers</a>
+        <a href="#contact">Contact</a>
+      </div>
+</header>
+
+<div class="content">
+    <div id="banner">
+        <img src="assets/img/banner.jpg" alt="Banner Image">
+        <div class="overlay"></div>
+        <div class="content-banner">
+            <h1>Ideas</h1>
+            <p>Where all our great things begin</p>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+                        <!-- Add the following dropdown for items per page -->
+                        <div class="page-item">
+                            <div class="controls">
+                                <h5>Show per page</h5>
+                                <select id="itemsPerPageDropdown" class="form-control">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="controls">
+                                <h5>Sort by</h5>
+                                <select id="sortByDropdown" class="form-control">
+                                    <option value="newest">Newest</option>
+                                    <option value="oldest">Oldest</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+            <div class="card-content">
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/image2.jpg" alt=""></div>
+                    <div class="card-info">
+                        <span class="card-date">5 SEPTEMBER 2022</span>
+                        <h4>Jangan Asal Pilih Influencers, Berikut Cara Menyusun Strategi Influencer Berdasarkan Jumlah Followers</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <ul>
+                    <li class="page-item"><a class="page-link" href="#">««</a></li>
+                    <li class="page-item"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»»</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
